@@ -2,10 +2,25 @@ import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 
+//Loader layout
+function hideLoader() {
+  var loader = document.getElementById("loader");
+  loader.classList.remove("flex");
+}
+// Mostra l'elemento di caricamento
+function showLoader() {
+  var loader = document.getElementById("loader");
+  loader.classList.add("hidden");
+}
+
+
 document.addEventListener('DOMContentLoaded', function () {
 
+hideLoader();
+// Canvas Div References
+const containerModel = document.getElementById('containerModel');
   // Renderer
-  const renderer = new THREE.WebGLRenderer();
+  const renderer = new THREE.WebGLRenderer({ antialias: true });
   renderer.setSize(window.innerWidth, window.innerHeight);
   renderer.shadowMap.enabled = true;
   renderer.setClearColor(0xdddddd);
@@ -14,7 +29,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const canvasContainer = document.createElement('div');
   canvasContainer.id = 'canvas-container';
   canvasContainer.appendChild(renderer.domElement);
-  document.body.appendChild(canvasContainer);
+  containerModel.appendChild(canvasContainer);
   // Scene
   const scene = new THREE.Scene();
   scene.background = new THREE.Color(0xdddddd);
@@ -45,11 +60,11 @@ document.addEventListener('DOMContentLoaded', function () {
   directionalLight.shadow.camera.right = 100;
   directionalLight.shadow.camera.top = 100;
   directionalLight.shadow.camera.bottom = -100;
-  scene.add(directionalLight);
+  directionalLight.position.copy(camera.position);
+
   // Light Target
   const lightTarget = new THREE.Object3D();
   scene.add(lightTarget);
-  directionalLight.position.set(0, 50, 100);
   directionalLight.target = lightTarget;
   // Group of Objects
   const group = new THREE.Group();
@@ -75,17 +90,16 @@ document.addEventListener('DOMContentLoaded', function () {
   rxArrow.addEventListener('click', function () {
     changeMenuAndTitle('right');
   });
-
-  // Close/Open menu
-  // Menu and title elements
-  let menuLobes1 = document.getElementById('menuLobes1');
-  let menuLobes2 = document.getElementById('menuLobes2');
-  let menuLobes3 = document.getElementById('menuLobes3');
-  let menuSection = document.getElementById('menuSection');
-  let menuaNumb = document.getElementById('menuaNumb');
-  let lobesTitle = document.getElementById('lobesTitle');
-  let sectionPlaneTitle = document.getElementById('sectionPlaneTitle');
-  let aNumbTitle = document.getElementById('aNumbTitle');
+// Define menu and title elements
+const menuLobes1 = document.getElementById('menuLobes1');
+const menuLobes2 = document.getElementById('menuLobes2');
+const menuLobes3 = document.getElementById('menuLobes3');
+const menuSection = document.getElementById('menuSection');
+const menuaNumb = document.getElementById('menuaNumb');
+const lobesTitle = document.getElementById('lobesTitle');
+const sectionPlaneTitle = document.getElementById('sectionPlaneTitle');
+const aNumbTitle = document.getElementById('aNumbTitle');
+ // Set initial variables
   let current = 1;
   let currentScreen = 'menuLobes';
   let isMenuOpen = false;
@@ -104,7 +118,6 @@ document.addEventListener('DOMContentLoaded', function () {
   // Function to toggle the menu open/close
   function toggleMenu() {
     isMenuOpen = !isMenuOpen;
-
     if (isMenuOpen) {
       imgToggleMenu.style.transform = 'scale(0.1) rotate(180deg)';
 
@@ -161,7 +174,7 @@ document.addEventListener('DOMContentLoaded', function () {
       sectionPlaneTitle.style.display = 'none';
       aNumbTitle.style.display = 'none';
     }
-  }
+  };
 
   // Event listener for the toggle menu element
   varToggleMenu.addEventListener('click', toggleMenu);
@@ -169,13 +182,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Change menu and title based on direction
   function changeMenuAndTitle(direction) {
+  // Update current value based on direction
     if (direction === 'left') {
       current = current === 1 ? 3 : current - 1;
     } else if (direction === 'right') {
       current = current === 3 ? 1 : current + 1;
     }
-
-    // Aggiorna currentScreen in base al tipo di menu attivo
+   // Update currentScreen based on current menu
     if (current === 3) {
       currentScreen = 'menuLobes';
     } else if (current === 1) {
@@ -183,8 +196,7 @@ document.addEventListener('DOMContentLoaded', function () {
     } else if (current === 2) {
       currentScreen = 'menuaNumb';
     }
-
-    // Nascondi tutti i menu e titoli
+   // Hide all menus and titles
     menuLobes1.style.display = 'none';
     menuLobes2.style.display = 'none';
     menuLobes3.style.display = 'none';
@@ -193,8 +205,7 @@ document.addEventListener('DOMContentLoaded', function () {
     sectionPlaneTitle.style.display = 'none';
     menuaNumb.style.display = 'none';
     aNumbTitle.style.display = 'none';
-
-    // Mostra il menu e il titolo corrispondenti alla nuova posizione
+   // Show the corresponding menu and title based on the new position
     if (current === 1) {
       if (currentModel === 1) {
         menuLobes1.style.display = 'block';
@@ -212,8 +223,7 @@ document.addEventListener('DOMContentLoaded', function () {
       aNumbTitle.style.display = 'block';
     }
   }
-
-  // Show Sections Function
+ // Section Planes Array
   const sectionPlanes = [
     { name: 'sagittale', position: new THREE.Vector3(0, 2, 0), rotation: new THREE.Euler(0, -Math.PI / 2, 0) },
     { name: 'orizzontale', position: new THREE.Vector3(0, 0, 0), rotation: new THREE.Euler(Math.PI / 2, 0, 0) },
@@ -226,7 +236,7 @@ document.addEventListener('DOMContentLoaded', function () {
   let activeSection = null; // Variable to store the active section
   let currentSectionObject = null; // Global variable to store the current section object
   let sectionName = '';
-
+ // Show Sections Function
   function showSections(sectionName) {
     // Check if the selected section is already active
     if (activeSection && activeSection.name === sectionName) {
@@ -245,7 +255,7 @@ document.addEventListener('DOMContentLoaded', function () {
     if (!sectionObject) {
       // Create the plane for the reference section
       const planeGeometry = new THREE.PlaneGeometry(30, 30);
-      const planeMaterial = new THREE.MeshStandardMaterial({ color: 0x000000, side: THREE.DoubleSide });
+      const planeMaterial = new THREE.MeshStandardMaterial({ color: 0xaafff3, side: THREE.DoubleSide });
       const planeMesh = new THREE.Mesh(planeGeometry, planeMaterial);
       planeMesh.receiveShadow = true;
       // Create a group object for the reference section
@@ -270,10 +280,8 @@ document.addEventListener('DOMContentLoaded', function () {
     // Update the current section object
     currentSectionObject = sectionObject;
   }
-
-  // Utilizzo della funzione
+ // Use the showSections function
   showSections(sectionName);
-
   // Add event listeners for section buttons
   const sagittaleBtn = document.getElementById('sagittale');
   const orizzontaleBtn = document.getElementById('orizzontale');
@@ -301,7 +309,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const partIds = {};
   const partObjects = {};
   const modelMeshes = [];
-  const originalMaterial = new THREE.MeshStandardMaterial({ color: 0xFFF0F5 });
+  const originalMaterial = new THREE.MeshStandardMaterial({ color: 0xdecfd7 });
   const assetLoader = new GLTFLoader();
 
   function loadModel(modelUrl) {
@@ -323,7 +331,7 @@ document.addEventListener('DOMContentLoaded', function () {
           modelMeshes.push(child);
         }
       });
-
+      model.castShadow = true;
       // Imposta posizioni e scale per ogni modello
       if (currentModel === 1) {
         model.position.set(0, 0, -10);
@@ -504,6 +512,7 @@ document.addEventListener('DOMContentLoaded', function () {
         directionalLight.position.copy(camera.position);
         lightTarget.position.copy(camera.position);
         lightTarget.position.add(camera.getWorldDirection(new THREE.Vector3()).multiplyScalar(100));
+        scene.add(directionalLight);
         group.rotation.y -= 0.01;
       }
       renderer.render(scene, camera);
@@ -667,4 +676,5 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   };
   renderer.setAnimationLoop(animation);
+  setTimeout(showLoader, 3000);
 });

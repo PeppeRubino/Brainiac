@@ -2,7 +2,7 @@
 <html lang="it">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge,chrome=1">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>xBrainiac</title>
     <link rel="icon" href="/media/img/icon.ico" type="image/x-icon">
@@ -13,15 +13,21 @@
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
 <body>
-  <header class="absolute w-1/6 md:w-1/5 flex flex-col justify-center items-center bg-white shadow-md z-10">
-    <div class="bg-black text-white flex items-center justify-center h-5 w-full">MENU</div>
+  <!-- Loading Page -->
+  <section id="loader" class="loader w-full h-full">
+    <div class="ringCircle"></div>
+    <span>loading...</span>
+  </section>
+  <!-- Header - Menù -->
+  <section id="header" class="absolute w-1/6 md:w-1/5 flex flex-col justify-center items-center left-1 z-10 select-none">
+    <div class="bg-black text-white flex items-center justify-center h-5 w-full">Menù</div>
     <div id="appSection" class="w-8 h-full absolute top-0 -right-10 flex flex-col justify-center items-center">
       <button id="changeModel" class="bg-gray-600 rounded shadow-md w-5 h-5 absolute top-6 cursor-pointer"
         title="updateModel">
         <img src="./media/img/update.png" class="p-1">
       </button>
     </div>
-    <div id="menuLobes1" class="w-full block">
+    <div id="menuLobes1" class="w-full block bg-white">
       <div id="frontale" class="h-8 flex items-center justify-center text-gray-500 hover:bg-black hover:text-white">Lobo
         Frontale</div>
       <div id="parietale" class="h-8 flex items-center justify-center text-gray-500 hover:bg-black hover:text-white">Lobo
@@ -37,7 +43,7 @@
       <div id="pineale" class="h-8 flex items-center justify-center text-gray-500 hover:bg-black hover:text-white">
         Ghiandola Pineale</div>
     </div>
-    <div id="menuLobes2" class="w-full block">
+    <div id="menuLobes2" class="w-full block bg-white">
       <div id="putamen" class="h-8 flex items-center justify-center text-gray-500 hover:bg-black hover:text-white">Putamen
       </div>
       <div id="nucleoCaudato" class="h-8 flex items-center justify-center text-gray-500 hover:bg-black hover:text-white">
@@ -54,7 +60,7 @@
         class="h-8 flex items-center justify-center text-gray-500 hover:bg-black hover:text-white">Peduncolo Superiore
       </div>
     </div>
-    <div id="menuLobes3" class="w-full block">
+    <div id="menuLobes3" class="w-full block bg-white">
       <div id="corpoCalloso" class="h-8 flex items-center justify-center text-gray-500 hover:bg-black hover:text-white">
         Corpo Calloso</div>
       <div id="chiasmaOttico" class="h-8 flex items-center justify-center text-gray-500 hover:bg-black hover:text-white">
@@ -75,7 +81,7 @@
         class="h-8 flex items-center justify-center text-gray-500 hover:bg-black hover:text-white">Collicolo Inferiore
       </div>
     </div>
-    <div id="menuSection" class="w-full hidden">
+    <div id="menuSection" class="w-full hidden bg-white">
       <div id="sagittale" class="h-8 flex items-center justify-center text-gray-500 hover:bg-black hover:text-white">
         Sagittale</div>
       <div id="orizzontale" class="h-8 flex items-center justify-center text-gray-500 hover:bg-black hover:text-white">
@@ -85,7 +91,7 @@
       <div id="trasversale" class="h-8 flex items-center justify-center text-gray-500 hover:bg-black hover:text-white">
         Trasversale</div>
     </div>
-    <div id="menuaNumb" class="w-full hidden text-center p-4">
+    <div id="menuaNumb" class="w-full hidden text-center p-4 bg-white">
       <label for="area-cervello">Quale area del cervello desideri visualizzare?</label>
       <br>
       <div class="grid grid-cols-1 gap-4">
@@ -96,16 +102,19 @@
           <button id="sendNumb" class="bg-black text-white px-2 rounded-md text-center">Invia</button>
         </div>
       </div>
-      <span id="advise" class="text-center text-gray-400 mt-2 text-sm">Warning: If you don't see any point, click "Change
+      <span id="advise" class="advertiseTwo text-center text-gray-400 mt-2">If you don't see any point, click "Change
         Model"</span>
       <span id="error" class="hidden text-center text-red-600 mt-2">Warning: max 52</span>
     </div>
-    <div id="toggleMenu" class="bg-black text-white flex items-center justify-center h-5 w-full cursor-pointer"><img
+    <div id="toggleMenu" class="bg-black text-white overflow-hidden flex items-center justify-center h-5 w-full rounded-b-2xl cursor-pointer"><img
         src="./media/img/arrow2.png" id="imgToggleMenu" class="toggleMenu md:w-32"></div>
     <!--Broadmann's map Info-->
-  </header>
-  
-  <aside>
+  </section>
+  <!-- Container of scene -->
+  <section id="containerModel" class="w-screen">
+  </section>
+  <!-- Broadmann Texts -->
+  <section id="broadmannTexts">
     <div id="containerTexts" class="absolute w-52 p-2 top-0 right-2 bg-black text-white z-10 hidden cursor-pointer">
       <!-- Sezione per l'area 1 -->
       <div id="numberSectionInfo1" class="hidden">
@@ -484,11 +493,9 @@
           oggetti nello spazio.</p>
       </div>
     </div>
-  </aside>
-  
-  <main>
-    <!--da sezionare in un div-->
-  
+  </section>
+  <!-- Player Buttons -->
+  <section id="player">
     <div id="playerSections" class="absolute flex justify-between w-screen px-5 lg:justify-evenly h-1/5 bottom-3">
       <div><img src="./media/img/arrow.png" id="sx_arrow" class="arrow lg:w-6 cursor-pointer"></div>
       <div>
@@ -504,10 +511,17 @@
       <div id="sectionPlaneTitle" class="titles hidden text-l">Sezioni</div>
       <div id="aNumbTitle" class="titles hidden text-l">Aree di Broadmann</div>
     </div>
-  </main>
-  
+  </section>
+  <!-- Advertise -->
+  <section id="advertise">
+    <div class="advertiseOne w-full p-4 hidden md:flex justify-center absolute bottom-10 select-none">
+      <p class="text-gray-400">The 3D viewer is not 100% accurate and needs to be accompanied by a neuroscience book to be
+        understood.</p>
+    </div>
+  </section>
+  <!-- Footer -->
   <footer class="fixed bottom-0 w-full bg-black text-center py-2">
-    <p class="text-sm text-white">
+    <p class="text-white">
       Created by Giuseppe Rubino: freely available online for the benefit of all
       <a href="https://www.instagram.com/pepperubino.crow" target="_blank" rel="noopener noreferrer">
         <img src="./media/img/instagram.png" id="contact" alt="Instagram" class="inline-block w-6 h-6 rounded-full">
