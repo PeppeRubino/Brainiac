@@ -676,5 +676,5 @@ const aNumbTitle = document.getElementById('aNumbTitle');
     }
   };
   renderer.setAnimationLoop(animation);
-  setTimeout(showLoader, 3000);
+  showLoader();
 });

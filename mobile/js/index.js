@@ -701,5 +701,5 @@ const aNumbTitle = document.getElementById('aNumbTitle');
   
   // Use the function to make the body responsive
   makeBodyResponsive();
-  setTimeout(showLoader, 3000);
+  showLoader();
 });
