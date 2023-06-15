@@ -7,9 +7,9 @@ module.exports = {
           main: '/dist/index.html', // Percorso per la versione nella cartella 'dist'
           mobile: '/mobile/index.html' // Percorso per la versione nella cartella 'mobile'
         },
-        external: [
-            '/js/index.js'
-        ]
+        external: ['/js/index.js'],
+        external: ['/js/area_broadmann.js'],
+        external: ['/js/redirect.js']
       }
     }
   };
