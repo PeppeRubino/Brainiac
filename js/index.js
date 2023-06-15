@@ -13,8 +13,6 @@ function showLoader() {
 
 showLoader()
 document.addEventListener('DOMContentLoaded', function () {
-
-hideLoader();
 // Canvas Div References
 const containerModel = document.getElementById('containerModel');
   // Renderer
@@ -674,4 +672,5 @@ const aNumbTitle = document.getElementById('aNumbTitle');
     }
   };
   renderer.setAnimationLoop(animation);
+  hideLoader();
 });
