@@ -1,15 +1,15 @@
-// vite.config.js
-
 module.exports = {
     build: {
       rollupOptions: {
         input: {
-          main: '/dist/index.html', // Percorso per la versione nella cartella 'dist'
-          mobile: '/mobile/index.html' // Percorso per la versione nella cartella 'mobile'
+          main: '/dist/index.html', // Path to the version in the 'dist' folder
+          mobile: '/mobile/index.html' // Path to the version in the 'mobile' folder
         },
-        external: ['/js/index.js'],
-        external: ['/js/area_broadmann.js'],
-        external: ['/js/redirect.js']
+        external: [
+          '/js/index.js',
+          '/js/area_broadmann.js',
+          '/js/redirect.js'
+        ]
       }
     }
   };
