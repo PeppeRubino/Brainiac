@@ -7,11 +7,8 @@ const loader = document.getElementById("loader");
 function hideLoader() {
   loader.style.display = 'none';
 }
-function showLoader() {
-  loader.style.display = 'flex';
-}
 
-showLoader()
+
 document.addEventListener('DOMContentLoaded', function () {
 // Canvas Div References
 const containerModel = document.getElementById('containerModel');
