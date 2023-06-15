@@ -10,4 +10,4 @@
 
 [build]
   command = "vite build"
-  publish = "brainiac"
+  publish = "Brainiac"
