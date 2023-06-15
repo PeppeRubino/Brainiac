@@ -89,24 +89,22 @@
         Trasversale</div>
     </div>
     <div id="menuaNumb" class="w-full hidden text-center p-4 bg-white">
-      <label for="area-cervello">Quale area del cervello desideri visualizzare?</label>
+      <label for="area-cervello">Which area of the brain would you like to visualize?</label>
       <br>
       <div class="grid grid-cols-1 gap-4">
         <div>
-          <input type="text" id="numberBroadmann" name="numberBroadmann" class="text-center w-24 h-6 mt-2">
+          <input type="text" id="numberBroadmann" name="numberBroadmann" class="text-center w-24 h-6 mt-2" placeholder="1-52">
         </div>
         <div>
-          <button id="sendNumb" class="bg-black text-white px-2 rounded-md text-center">Invia</button>
+          <button id="sendNumb" class="bg-black text-white px-2 rounded-md text-center">Submit</button>
         </div>
       </div>
-      <span id="advertice" class="text-center text-gray-400 mt-2 text-sm">If you don't see any point, click
-        "Change
-        Model"</span>
-      <span id="error" class="hidden text-center text-red-600 mt-2">Warning: max 52</span>
+      <span id="advise" class="advertiseTwo text-center text-gray-400 mt-2">If you don't see any point, click "Change Model"</span>
+      <span id="error" class="hidden text-center text-red-600 mt-2">max. 52</span>
     </div>
     <div id="toggleMenu"
       class=" bg-black text-white flex items-center justify-center h-5 w-full rounded-b-3xl cursor-pointer">
-      <img src="./media/img/arrow2.png" id="imgToggleMenu" class="toggleMenu md:w-32">
+      <img src="./media/img/arrow2.png" alt="toggle menu" id="imgToggleMenu" class="toggleMenu md:w-32">
     </div>
     <!--Broadmann's map Info-->
   </section>
@@ -525,18 +523,18 @@
   </section>
   <section id="player">
     <div id="playerSections" class="absolute flex justify-between w-screen px-5 lg:justify-evenly bottom-28">
-      <div><img src="./media/img/arrow.png" id="sx_arrow" class="arrow lg:w-6 cursor-pointer"></div>
+      <div><img src="./media/img/arrow.png" id="sx_arrow" alt="left arrow" class="arrow lg:w-6 cursor-pointer"></div>
       <div>
         <img src="./media/img/pause.png" id="pause" class="absolute pause w-10 cursor-pointer">
         <img src="./media/img/play.png" id="play" class="absolute w-10 hidden cursor-pointer">
       </div>
-      <div><img src="./media/img/arrow.png" id="rx_arrow" class="arrow lg:w-6 cursor-pointer"></div>
+      <div><img src="./media/img/arrow.png" id="rx_arrow" alt="right arrow" class="arrow lg:w-6 cursor-pointer"></div>
     </div>
   </section>
   <section id="app">
-    <div id="appSection" class="w-full h-8 absolute bottom-16 flex flex-col justify-center items-center z-30">
-      <button id="changeModel" class="bg-gray-600 rounded shadow-md w-5 h-5 absolute cursor-pointer" title="updateModel">
-        <img src="./media/img/update.png" class="p-1">
+    <div id="appSection" class="w-full h-8 absolute bottom-1/3 flex flex-col justify-center items-center z-30">
+      <button id="changeModel" class="bg-gray-600 rounded shadow-md w-5 h-5 cursor-pointer" title="updateModel">
+        <img src="./media/img/update.png" alt="update" class="p-1">
       </button>
     </div>
   </section>
