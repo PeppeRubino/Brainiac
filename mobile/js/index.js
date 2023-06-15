@@ -350,7 +350,7 @@ const aNumbTitle = document.getElementById('aNumbTitle');
       hideLoader();
     });
   }
-
+  loader.style.opacity = '0.8';
 
   loadModel(brain1Url);
 
