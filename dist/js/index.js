@@ -8,9 +8,12 @@ function hideLoader() {
   loader.style.display = 'none';
 }
 
+function showLoader() {
+  loader.style.display = 'flex';
+}
+
 
 document.addEventListener('DOMContentLoaded', function () {
-  hideLoader();
 // Canvas Div References
 const containerModel = document.getElementById('containerModel');
   // Renderer
@@ -308,6 +311,7 @@ const aNumbTitle = document.getElementById('aNumbTitle');
   assetLoader.responseType = 'arraybuffer';
 
   function loadModel(modelUrl) {
+    showLoader()
     assetLoader.load(modelUrl.href, function (gltf) {
       if (model) {
         scene.remove(model);
@@ -342,7 +346,8 @@ const aNumbTitle = document.getElementById('aNumbTitle');
       }
 
       scene.add(model);
-      group.add(model)
+      group.add(model);
+      hideLoader();
     });
   }
 
