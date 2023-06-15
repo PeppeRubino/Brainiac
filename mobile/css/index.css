@@ -62,6 +62,9 @@ footer {
     -webkit-user-select: none; /* Chrome, Safari, Opera */
     -ms-user-select: none; /* Internet Explorer/Edge */
 }
+#appSection {
+    bottom: 18%;
+}
 
 .arrow {
     width: 6vw;
