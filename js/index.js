@@ -2,15 +2,13 @@ import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 
+const loader = document.getElementById("loader");
 //Loader layout
 function hideLoader() {
-  var loader = document.getElementById("loader");
-  loader.classList.remove("flex");
+  loader.style.display = 'none';
 }
-// Mostra l'elemento di caricamento
 function showLoader() {
-  var loader = document.getElementById("loader");
-  loader.classList.add("hidden");
+  loader.style.display = 'flex';
 }
 
 
@@ -676,5 +674,4 @@ const aNumbTitle = document.getElementById('aNumbTitle');
     }
   };
   renderer.setAnimationLoop(animation);
-  showLoader();
 });

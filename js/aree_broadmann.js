@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 //Manipolable info window
-interact('#containerTexts')
+interact('#broadmannTexts')
   .draggable({
     onmove: function (event) {
       var target = event.target;
