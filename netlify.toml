@@ -9,4 +9,5 @@
   status = 200
 
 [build]
-  publish = "Brainiac"
+  command = "vite build"
+  publish = "brainiac"
