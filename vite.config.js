@@ -8,7 +8,7 @@ module.exports = {
           mobile: '/mobile/index.html' // Percorso per la versione nella cartella 'mobile'
         },
         external: [
-          // Aggiungi qui eventuali moduli esterni da escludere dal bundle
+            '/js/index.js'
         ]
       }
     }
