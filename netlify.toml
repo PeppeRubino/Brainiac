@@ -1,5 +1,5 @@
 [build]
-  command = "npm run build" # o "yarn build" a seconda del package manager che utilizzi
+  command = "npx vite" # o "yarn build" a seconda del package manager che utilizzi
   publish = "dist"
   
 [[redirects]]
