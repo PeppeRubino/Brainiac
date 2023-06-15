@@ -11,4 +11,8 @@
   status = 200
 
 [build]
-  command = "vite build"
+  command = "npm run build"
+  publish = [
+    "dist",
+    "mobile"
+  ]
