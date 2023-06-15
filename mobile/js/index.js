@@ -350,10 +350,9 @@ const aNumbTitle = document.getElementById('aNumbTitle');
       hideLoader();
     });
   }
-  loader.style.opacity = '0.8';
 
   loadModel(brain1Url);
-
+  loader.style.opacity = '0.8';
   const changeModelBtn = document.getElementById('changeModel');
   changeModelBtn.addEventListener('click', changeModel);
   changeModelBtn.addEventListener('click', changeMenuAndTitle);
