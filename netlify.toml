@@ -1,5 +1,5 @@
 [build]
-  command = "npx vite build" # o "yarn build" a seconda del package manager che utilizzi
+  command = "vite build"
   publish = "dist"
   
 [[redirects]]
