@@ -7,9 +7,15 @@ body{margin: 0;}
 }
 header{
     user-select: none;
+    -moz-user-select: none; /* Firefox */
+    -webkit-user-select: none; /* Chrome, Safari, Opera */
+    -ms-user-select: none; /* Internet Explorer/Edge */
 }
 footer{
     user-select: none;
+    -moz-user-select: none; /* Firefox */
+    -webkit-user-select: none; /* Chrome, Safari, Opera */
+    -ms-user-select: none; /* Internet Explorer/Edge */
 }
 #titles{
     width: 100%;
@@ -22,9 +28,9 @@ footer{
     font-family: 'Montserrat', sans-serif;
     text-transform: uppercase; /* Trasforma il testo in maiuscolo */
     user-select: none;
-    -moz-user-select: none; /* Supporto per Firefox */
-    -webkit-user-select: none; /* Supporto per Chrome, Safari, Opera */
-    -ms-user-select: none; /* Supporto per Internet Explorer/Edge */
+    -moz-user-select: none; /* Firefox */
+    -webkit-user-select: none; /* Chrome, Safari, Opera */
+    -ms-user-select: none; /* Internet Explorer/Edge */
 
 }
 
@@ -41,9 +47,9 @@ footer{
 
 #playerSections{
     user-select: none;
-    -moz-user-select: none; /* Supporto per Firefox */
-    -webkit-user-select: none; /* Supporto per Chrome, Safari, Opera */
-    -ms-user-select: none; /* Supporto per Internet Explorer/Edge */
+    -moz-user-select: none; /* Firefox */
+    -webkit-user-select: none; /* Chrome, Safari, Opera */
+    -ms-user-select: none; /* Internet Explorer/Edge */
 }
 .arrow{
     width: 3vw;
@@ -73,6 +79,10 @@ footer{
     align-items: center;
     background: white;
     z-index: 99;
+    user-select: none;
+    -moz-user-select: none; /* Firefox */
+    -webkit-user-select: none; /* Chrome, Safari, Opera */
+    -ms-user-select: none; /* Internet Explorer/Edge */
 }
 
 .ringCircle {
