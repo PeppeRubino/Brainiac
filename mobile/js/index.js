@@ -312,6 +312,7 @@ const aNumbTitle = document.getElementById('aNumbTitle');
   assetLoader.responseType = 'arraybuffer';
 
   function loadModel(modelUrl) {
+    showLoader();
     assetLoader.load(modelUrl.href, function (gltf) {
       if (model) {
         scene.remove(model);
@@ -346,7 +347,8 @@ const aNumbTitle = document.getElementById('aNumbTitle');
       }
 
       scene.add(model);
-      group.add(model)
+      group.add(model);
+      hideLoader();
     });
   }
 

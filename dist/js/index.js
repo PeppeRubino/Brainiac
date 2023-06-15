@@ -311,7 +311,7 @@ const aNumbTitle = document.getElementById('aNumbTitle');
   assetLoader.responseType = 'arraybuffer';
 
   function loadModel(modelUrl) {
-    showLoader()
+    showLoader();
     assetLoader.load(modelUrl.href, function (gltf) {
       if (model) {
         scene.remove(model);
