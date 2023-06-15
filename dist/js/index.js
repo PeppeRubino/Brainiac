@@ -350,8 +350,6 @@ const aNumbTitle = document.getElementById('aNumbTitle');
       hideLoader();
     });
   }
-
-
   loadModel(brain1Url);
   changeMenuAndTitle();
 
@@ -677,3 +675,4 @@ const aNumbTitle = document.getElementById('aNumbTitle');
   };
   renderer.setAnimationLoop(animation);
 });
+loader.style.opacity = '0.8';
