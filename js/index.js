@@ -11,7 +11,7 @@ function showLoader() {
   loader.style.display = 'flex';
 }
 
-
+showLoader()
 document.addEventListener('DOMContentLoaded', function () {
 
 hideLoader();
