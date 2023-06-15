@@ -12,6 +12,17 @@
   to = "/mobile/index.html"
   status = 200
 
+  [[headers]]
+  for = "/*"
+    [headers.values]
+    Cache-Control = "no-store, no-cache, proxy-revalidate, max-age=0"
+
+[[headers]]
+  for = "/mobile/*"
+    [headers.values]
+    Cache-Control = "no-store, no-cache, proxy-revalidate, max-age=0"
+
+
 [[headers]]
   for = "/*"
   [headers.values]
