@@ -15,12 +15,12 @@
 [[headers]]
   for = "/*"
   [headers.values]
-    cache-control = "public, max-age=3600"
+    cache-control = "no-store, no-cache, must-revalidate, proxy-revalidate, max-age=0"
 
 [[headers]]
   for = "/mobile/*"
   [headers.values]
-    cache-control = "public, max-age=3600"
+    cache-control = "no-store, no-cache, must-revalidate, proxy-revalidate, max-age=0"
 
 [[headers]]
   for = "/*.gltf"
