@@ -7,7 +7,7 @@ module.exports = {
         },
         external: [
           '/js/index.js',
-          '/js/area_broadmann.js',
+          '/js/aree_broadmann.js',
           '/js/redirect.js'
         ]
       }
