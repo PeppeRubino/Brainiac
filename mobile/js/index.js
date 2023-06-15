@@ -9,11 +9,6 @@ function hideLoader() {
   loader.classList.remove("flex");
 }
 
-// Mostra l'elemento di caricamento
-function showLoader() {
-  var loader = document.getElementById("loader");
-  loader.classList.add("hidden");
-}
 
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -701,5 +696,4 @@ const aNumbTitle = document.getElementById('aNumbTitle');
   
   // Use the function to make the body responsive
   makeBodyResponsive();
-  showLoader();
 });
