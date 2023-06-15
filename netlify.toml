@@ -1,13 +1,14 @@
 [[redirects]]
+  # Redirect per la versione generale del sito (desktop)
   from = "/*"
-  to = "/index.html"
+  to = "/dist/:splat"
   status = 200
 
 [[redirects]]
-  from = "/mobile/*"
-  to = "/mobile/index.html"
+  # Redirect per la versione mobile del sito
+  from = "/m/*"
+  to = "/Brainiac/Mobile/:splat"
   status = 200
 
 [build]
   command = "vite build"
-  publish = "Brainiac"
