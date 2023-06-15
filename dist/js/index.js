@@ -8,7 +8,6 @@ function hideLoader() {
   loader.style.display = 'none';
 }
 
-response.setHeader('Content-Type', 'model/gltf-binary');
 
 document.addEventListener('DOMContentLoaded', function () {
   hideLoader();
@@ -306,6 +305,7 @@ const aNumbTitle = document.getElementById('aNumbTitle');
   const modelMeshes = [];
   const originalMaterial = new THREE.MeshStandardMaterial({ color: 0xdecfd7 });
   const assetLoader = new GLTFLoader();
+  assetLoader.setResponseType('arraybuffer');
 
   function loadModel(modelUrl) {
     assetLoader.load(modelUrl.href, function (gltf) {
