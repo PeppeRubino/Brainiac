@@ -7,7 +7,9 @@ const loader = document.getElementById("loader");
 function hideLoader() {
   loader.style.display = 'none';
 }
-
+function showLoader() {
+  loader.style.display = 'flex';
+}
 
 document.addEventListener('DOMContentLoaded', function () {
 
