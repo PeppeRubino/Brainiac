@@ -11,13 +11,3 @@
   from = "/mobile/*"
   to = "/mobile/index.html"
   status = 200
-
-[[headers]]
-  for = "/*"
-  [headers.values]
-  cache-control = "public, max-age=3600"
-
-[[headers]]
-  for = "/mobile/*"
-  [headers.values]
-  cache-control = "public, max-age=3600"
