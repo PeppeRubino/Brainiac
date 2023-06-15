@@ -8,6 +8,7 @@ function hideLoader() {
   loader.style.display = 'none';
 }
 
+response.setHeader('Content-Type', 'model/gltf-binary');
 
 document.addEventListener('DOMContentLoaded', function () {
   hideLoader();
