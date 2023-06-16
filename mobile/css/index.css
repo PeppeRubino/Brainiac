@@ -72,6 +72,11 @@ footer {
 #appSection {
     bottom: 14%;
 }
+@media (min-width: 600px) {
+    #appSection {
+      bottom: 12%;
+    }
+  }
 
 .arrow {
     width: 6vw;
