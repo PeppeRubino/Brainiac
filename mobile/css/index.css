@@ -54,9 +54,11 @@ footer {
 }
 #advertise, #error{
     font-size: 0.6em;
-    color: #737373;
     text-transform: uppercase;
     letter-spacing: 1px;
+}
+#advertise{
+    color: #737373;
 }
 
 #playerSections {
