@@ -1,11 +1,29 @@
 function redirectBasedOnUserAgent() {
-    const isMobile = window.innerWidth <= 768; // Modifica il valore 768 con la larghezza desiderata per i dispositivi mobili
-  
-    if (isMobile && window.location.pathname !== "/mobile/index.html") {
+  const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+  const isPortrait = window.matchMedia("(orientation: portrait)").matches;
+
+  if ((isMobile && isPortrait && window.location.pathname !== "/mobile/index.html") ||
+      (!isMobile && !isPortrait && window.location.pathname !== "/index.html")) {
+    if (isMobile) {
       window.location.href = "../mobile/index.html";
-    } else if (!isMobile && window.location.pathname !== "/index.html") {
+    } else {
       window.location.href = "../index.html";
     }
   }
+}
+
+redirectBasedOnUserAgent();
+
+
+
+  function handleOrientationChange() {
+    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    const isPortrait = window.matchMedia("(orientation: portrait)").matches;
   
-  redirectBasedOnUserAgent();
+    if (isMobile && !isPortrait && window.location.pathname !== "/mobile/index.html") {
+      window.location.href = "../mobile/index.html";
+    }
+  }
+  
+  window.addEventListener("orientationchange", handleOrientationChange);
+  
