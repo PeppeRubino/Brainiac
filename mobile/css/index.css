@@ -81,7 +81,7 @@ footer {
 
 
 #sx_arrow {
-    transform: rotate(180deg) translate(-50%, -50%);
+    transform: rotate(180deg) translate(50%, 50%);
 }
 
 #pause {
