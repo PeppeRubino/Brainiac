@@ -52,7 +52,12 @@ footer {
 #aNumb {
     position: absolute;
 }
-#advertise, #error{font-size: 0.6em;}
+#advertise, #error{
+    font-size: 0.6em;
+    color: #737373;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
 
 #playerSections {
     user-select: none;
@@ -135,6 +140,10 @@ footer {
     font-size: 1.2em;
     text-align: center;
     animation: textLoader 3s ease-in-out infinite;
+    color: #737373;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    line-height: 200px;
 }
 
 .ringCircle::before {
@@ -146,13 +155,6 @@ footer {
     width: 100%;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
     border-radius: 50%;
-}
-
-span {
-    color: #737373;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    line-height: 200px;
 }
 
 @keyframes textLoader {
