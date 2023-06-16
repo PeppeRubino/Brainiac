@@ -69,14 +69,6 @@ footer {
     -webkit-user-select: none; /* Chrome, Safari, Opera */
     -ms-user-select: none; /* Internet Explorer/Edge */
 }
-@media (min-width: 600px) {
-    #appSection {
-      bottom: 12%;
-    }
-  }
-#appSection {
-    bottom: 14%;
-}
 
 .arrow {
     width: 6vw;
