@@ -351,6 +351,7 @@ const aNumbTitle = document.getElementById('aNumbTitle');
     });
   }
   loadModel(brain1Url);
+  loader.style.opacity = '0.99';
   changeMenuAndTitle();
 
   const changeModelBtn = document.getElementById('changeModel');
@@ -576,7 +577,7 @@ const aNumbTitle = document.getElementById('aNumbTitle');
   };
 
   // Set event listeners for header sections
-  const sections = document.querySelectorAll('.h-8');
+  const sections = document.querySelectorAll('.sectionMenu');
   sections.forEach(section => {
     section.addEventListener('click', () => {
       const sectionId = section.id;
@@ -675,4 +676,3 @@ const aNumbTitle = document.getElementById('aNumbTitle');
   };
   renderer.setAnimationLoop(animation);
 });
-loader.style.opacity = '0.8';
