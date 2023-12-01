@@ -552,8 +552,8 @@ const aNumbTitle = document.getElementById('aNumbTitle');
   });
   // Map between section names and corresponding part names
   const sectionToPartMap = {
-    'frontale': 'frontal_01_- Default_0',
-    'parietale': 'pariet_01_- Default_0',
+    'frontale': 'frontal_01 - Default_0',
+    'parietale': 'pariet_01 - Default_0',
     'temporale': 'temp_01_- Default_0',
     'occipitale': 'occipit_01_- Default_0',
     'cervelletto': 'cereb_01_- Default_0',
