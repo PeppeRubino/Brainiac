@@ -619,7 +619,7 @@ const aNumbTitle = document.getElementById('aNumbTitle');
   function colorObjectByName(partName, color) {
     for (const id in partObjects) {
       const object = partObjects[id];
-      if (object.userData.name === partName) {
+      if (object && object.userData && object.userData.name === partName) {
         const tempMaterial = new THREE.MeshStandardMaterial({ color: color });
         object.material = tempMaterial;
       }
