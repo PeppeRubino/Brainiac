@@ -624,7 +624,6 @@ const aNumbTitle = document.getElementById('aNumbTitle');
       }
     }
   }
-
   // Raycaster
   const raycaster = new THREE.Raycaster();
   const mousePosition = new THREE.Vector2();
