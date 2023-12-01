@@ -612,6 +612,7 @@ const aNumbTitle = document.getElementById('aNumbTitle');
       }
 
       colorObjectByName(partName, color);
+      console.log(`Clicked Section: ${sectionId}, Object ID: ${partName}, Object Name: ${partObjects[partName].userData.name}`);
     });
   });
 
