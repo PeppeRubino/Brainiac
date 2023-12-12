@@ -547,9 +547,8 @@ const aNumbTitle = document.getElementById('aNumbTitle');
       object.material = originalMaterial;
     }
   }
-  window.addEventListener('dblclick', function (e) {
-    resetColor();
-  });
+  
+  window.addEventListener('dblclick', resetColor);
   // Map between section names and corresponding part names
   const sectionToPartMap = {
     'frontale': 'frontal_01 - Default_0',
