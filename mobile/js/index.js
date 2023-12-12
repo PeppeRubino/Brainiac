@@ -540,6 +540,7 @@ const aNumbTitle = document.getElementById('aNumbTitle');
     }
     return null;
   }
+  let lastClickTime = 0;
   function resetColor() {
     for (const id in partObjects) {
       const object = partObjects[id];
