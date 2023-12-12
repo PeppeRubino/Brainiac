@@ -575,56 +575,56 @@ const aNumbTitle = document.getElementById('aNumbTitle');
     'peduncoloSuperiore': 'Superior_cerebellar_peduncle.r.002_Superior_cerebellar_peduncle.r.001',
   };
 
-  // Set event listeners for header sections
-  const sections = document.querySelectorAll('.sectionMenu');
-  sections.forEach(section => {
-    section.addEventListener('click', () => {
-      const sectionId = section.id;
-      const partName = sectionToPartMap[sectionId];
-      let color;
+// Set event listeners for header sections
+const sections = document.querySelectorAll('.sectionMenu');
+sections.forEach(section => {
+  section.addEventListener('click', () => {
+    const sectionId = section.id;
+    const partName = sectionToPartMap[sectionId];
+    let color;
 
-      switch (sectionId) {
-        case 'frontale':
-          color = 0xffff00;
-          break;
-        case 'parietale':
-          color = 0x00ff00;
-          break;
-        case 'temporale':
-          color = 0xff0000;
-          break;
-        case 'occipitale':
-          color = 0x0000ff;
-          break;
-        case 'cervelletto':
-          color = 0xFfa500;
-          break;
-        case 'tronco':
-          color = 0xff00fb;
-          break;
-        case 'pineale':
-          color = 0x54aedb;
-          break;
-        default:
-          color = 0xff0000; // Rosso come fallback
-          break;
-      }
+    switch (sectionId) {
+      case 'frontale':
+        color = 0xffff00;
+        break;
+      case 'parietale':
+        color = 0x00ff00;
+        break;
+      case 'temporale':
+        color = 0xff0000;
+        break;
+      case 'occipitale':
+        color = 0x0000ff;
+        break;
+      case 'cervelletto':
+        color = 0xFfa500;
+        break;
+      case 'tronco':
+        color = 0xff00fb;
+        break;
+      case 'pineale':
+        color = 0x54aedb;
+        break;
+      default:
+        color = 0xff0000; // Rosso come fallback
+        break;
+    }
 
-      colorObjectByName(partName, color);
-    });
+    colorObjectByName(partName, color);
+    console.log(`Clicked Section: ${sectionId}, Object ID: ${partName}, Object Name: ${partObjects[partName].userData.name}`);
   });
+});
 
   function colorObjectByName(partName, color) {
     console.log('Clicked Section:', partName);
     for (const id in partObjects) {
       const object = partObjects[id];
-      if (object.userData.name === partName) {
+      if (object && object.userData && object.userData.name === partName) {
         const tempMaterial = new THREE.MeshStandardMaterial({ color: color });
         object.material = tempMaterial;
       }
     }
   }
-
   // Raycaster
   const raycaster = new THREE.Raycaster();
   const mousePosition = new THREE.Vector2();
