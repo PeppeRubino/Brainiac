@@ -547,16 +547,15 @@ const aNumbTitle = document.getElementById('aNumbTitle');
       object.material = originalMaterial;
     }
   }
-  window.addEventListener('dblclick', function (e) {
-    resetColor();
-  });
+  
+  window.addEventListener('dblclick', resetColor);
   // Map between section names and corresponding part names
   const sectionToPartMap = {
-    'frontale': 'frontal_01 - Default_0',
-    'parietale': 'pariet_01 - Default_0',
-    'temporale': 'temp_01 - Default_0',
-    'occipitale': 'occipit_01 - Default_0',
-    'cervelletto': 'cereb_01 - Default_0',
+    'frontale': 'frontal_01_- Default_0',
+    'parietale': 'pariet_01_- Default_0',
+    'temporale': 'temp_01_- Default_0',
+    'occipitale': 'occipit_01_- Default_0',
+    'cervelletto': 'cereb_01_- Default_0',
     'tronco': 'stem_01 - Default_0',
     'pineale': 'pitua_01 - Default_0',
     'putamen': 'Putamen.r.002_Putamen.r.001',
@@ -616,6 +615,7 @@ const aNumbTitle = document.getElementById('aNumbTitle');
   });
 
   function colorObjectByName(partName, color) {
+    console.log('Clicked Section:', partName);
     for (const id in partObjects) {
       const object = partObjects[id];
       if (object.userData.name === partName) {
