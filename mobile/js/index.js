@@ -547,7 +547,32 @@ const aNumbTitle = document.getElementById('aNumbTitle');
     }
   }
   
-  window.addEventListener('dblclick', resetColor);
+  let lastClickTime = 0;
+
+  window.addEventListener('click', function (e) {
+    const currentTime = new Date().getTime();
+    const clickTimeDiff = currentTime - lastClickTime;
+    
+    if (clickTimeDiff < 300) {
+      // Se è passato meno di 300 millisecondi dall'ultimo click, consideralo come un doppio click
+      resetColor();
+    }
+  
+    lastClickTime = currentTime;
+  });
+  
+  // Aggiungi anche l'ascoltatore per l'evento touchstart
+  window.addEventListener('touchstart', function (e) {
+    const currentTime = new Date().getTime();
+    const clickTimeDiff = currentTime - lastClickTime;
+    
+    if (clickTimeDiff < 300) {
+      // Se è passato meno di 300 millisecondi dall'ultimo click, consideralo come un doppio click
+      resetColor();
+    }
+  
+    lastClickTime = currentTime;
+  });
   // Map between section names and corresponding part names
   const sectionToPartMap = {
     'frontale': 'frontal_01 - Default_0',
