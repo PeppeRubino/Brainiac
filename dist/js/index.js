@@ -652,7 +652,7 @@ const aNumbTitle = document.getElementById('aNumbTitle');
       const clickedObject = intersects[0].object;
       const partId = clickedObject.userData.partId;
       colorObjectById(partId, 0xff0000);
-      console.log(clickedObject);
+      console.log(partName);
     }
   }
 
