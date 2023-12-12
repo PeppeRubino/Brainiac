@@ -547,32 +547,24 @@ const aNumbTitle = document.getElementById('aNumbTitle');
     }
   }
   
-  let lastClickTime = 0;
-
-  window.addEventListener('click', function (e) {
-    const currentTime = new Date().getTime();
-    const clickTimeDiff = currentTime - lastClickTime;
-    
-    if (clickTimeDiff < 300) {
-      // Se è passato meno di 300 millisecondi dall'ultimo click, consideralo come un doppio click
-      resetColor();
-    }
-  
-    lastClickTime = currentTime;
-  });
+  window.addEventListener('dblclick', resetColor);
   
   // Aggiungi anche l'ascoltatore per l'evento touchstart
   window.addEventListener('touchstart', function (e) {
-    const currentTime = new Date().getTime();
-    const clickTimeDiff = currentTime - lastClickTime;
-    
-    if (clickTimeDiff < 300) {
-      // Se è passato meno di 300 millisecondi dall'ultimo click, consideralo come un doppio click
-      resetColor();
-    }
+    // Controlla se è un doppio tap
+    if (e.touches.length === 1) {
+      const currentTime = new Date().getTime();
+      const clickTimeDiff = currentTime - lastClickTime;
   
-    lastClickTime = currentTime;
+      if (clickTimeDiff < 300) {
+        // Se è passato meno di 300 millisecondi dall'ultimo tap, consideralo come un doppio tap
+        resetColor();
+      }
+  
+      lastClickTime = currentTime;
+    }
   });
+  
   // Map between section names and corresponding part names
   const sectionToPartMap = {
     'frontale': 'frontal_01 - Default_0',
