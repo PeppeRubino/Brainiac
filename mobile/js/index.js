@@ -552,9 +552,9 @@ const aNumbTitle = document.getElementById('aNumbTitle');
   const sectionToPartMap = {
     'frontale': 'frontal_01_- Default_0',
     'parietale': 'pariet_01_- Default_0',
-    'temporale': 'temp_01_- Default_0',
-    'occipitale': 'occipit_01_- Default_0',
-    'cervelletto': 'cereb_01_- Default_0',
+    'temporale': 'temp_01 - Default_0',
+    'occipitale': 'occipit_01 - Default_0',
+    'cervelletto': 'cereb_01 - Default_0',
     'tronco': 'stem_01 - Default_0',
     'pineale': 'pitua_01 - Default_0',
     'putamen': 'Putamen.r.002_Putamen.r.001',
