@@ -546,17 +546,18 @@ const aNumbTitle = document.getElementById('aNumbTitle');
       object.material = originalMaterial;
     }
   }
-  
-  window.addEventListener('dblclick', resetColor);
+  window.addEventListener('dblclick', function (e) {
+    resetColor();
+  });
   // Map between section names and corresponding part names
   const sectionToPartMap = {
-    'frontale': 'frontal_01_-_Default_0',
-    'parietale': 'pariet_01_-_Default_0',
-    'temporale': 'temp_01_-_Default_0',
-    'occipitale': 'occipit_01_-_Default_0',
-    'cervelletto': 'cereb_01_-_Default_0',
-    'tronco': 'stem_01_-_Default_0',
-    'pineale': 'pitua_01_-_Default_0',
+    'frontale': 'frontal_01 - Default_0',
+    'parietale': 'pariet_01 - Default_0',
+    'temporale': 'temp_01 - Default_0',
+    'occipitale': 'occipit_01 - Default_0',
+    'cervelletto': 'cereb_01 - Default_0',
+    'tronco': 'stem_01 - Default_0',
+    'pineale': 'pitua_01 - Default_0',
     'putamen': 'Putamen.r.002_Putamen.r.001',
     'nucleoCaudato': 'Caudate_nucleus.r.002_Caudate_nucleus.r.001',
     'talamo': 'Thalamus.r.001',
